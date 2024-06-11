@@ -52,7 +52,6 @@ EventSourceResponse.DEFAULT_PING_INTERVAL = 1000
 
 # set LLM path
 
-# MODEL_PATH = os.environ.get('MODEL_PATH', '/home/eppei/llm/THUDM/glm-4-9b-chat')
 MODEL_PATH = os.environ.get('MODEL_PATH', 'THUDM/glm-4-9b-chat-int4')
 TOKENIZER_PATH = os.environ.get("TOKENIZER_PATH", MODEL_PATH)
 
@@ -601,4 +600,4 @@ if __name__ == "__main__":
 
     # load Embedding
     embedding_model = SentenceTransformer(EMBEDDING_PATH, device="cuda")
-    uvicorn.run(app, host='0.0.0.0', port=8017, workers=1)
+    uvicorn.run(app, host='0.0.0.0', port=8000, workers=1)
